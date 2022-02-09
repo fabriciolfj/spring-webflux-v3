@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 import java.util.function.BiFunction;
 
 @Service
-public class CalculatorHanlder {
+public class CalculatorHandler {
 
     public Mono<ServerResponse> additionHandler(final ServerRequest request) {
         return processo(request, (a, b) -> ServerResponse.ok().bodyValue(a + b));

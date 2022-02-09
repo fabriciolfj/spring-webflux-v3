@@ -1,6 +1,6 @@
 package com.github.webfluxdemo.route;
 
-import com.github.webfluxdemo.handler.CalculatorHanlder;
+import com.github.webfluxdemo.handler.CalculatorHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.server.*;
 @RequiredArgsConstructor
 public class CalculateHandler {
 
-    private final CalculatorHanlder calculatorHanlder;
+    private final CalculatorHandler calculatorHandler;
 
     @Bean
     public RouterFunction<ServerResponse> pathBaseCalc() {
@@ -21,10 +21,10 @@ public class CalculateHandler {
     @Bean
     public RouterFunction<ServerResponse> serverResponseRouterFunctionCalc() {
         return RouterFunctions.route()
-                .GET("{a}/{b}", isOperation("+"), calculatorHanlder::additionHandler)
-                .GET("{a}/{b}", isOperation("*"), calculatorHanlder::multiplicationHandler)
-                .GET("{a}/{b}", isOperation("-"), calculatorHanlder::subtractionHandler)
-                .GET("{a}/{b}", isOperation("/"), calculatorHanlder::divisionHandler)
+                .GET("{a}/{b}", isOperation("+"), calculatorHandler::additionHandler)
+                .GET("{a}/{b}", isOperation("*"), calculatorHandler::multiplicationHandler)
+                .GET("{a}/{b}", isOperation("-"), calculatorHandler::subtractionHandler)
+                .GET("{a}/{b}", isOperation("/"), calculatorHandler::divisionHandler)
                 .GET("{a}/{b}", req -> ServerResponse.badRequest().bodyValue("Op not found"))
                 .build();
     }
