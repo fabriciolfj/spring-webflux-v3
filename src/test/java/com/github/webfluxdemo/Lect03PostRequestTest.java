@@ -18,6 +18,7 @@ public class Lect03PostRequestTest extends WebfluxDemoApplicationTests {
                 .uri("/api/v2/math")
                 .bodyValue(new MathRequestDto(4, 4))
                 .header("key", "value")
+                //.headers(h -> h.setBasicAuth("username", "password"))
                 .retrieve()
                 .bodyToMono(ResponseDto.class)
                 .doOnNext(System.out::println);

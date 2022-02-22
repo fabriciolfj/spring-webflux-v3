@@ -5,8 +5,6 @@ import com.github.webfluxdemo.dto.ResponseDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClientResponseException;
-import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 public class Lect05ExchangeTest extends WebfluxDemoApplicationTests{
