@@ -1,4 +1,4 @@
-package com.github.webfluxdemo;
+package com.github.webfluxdemo.webclient;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

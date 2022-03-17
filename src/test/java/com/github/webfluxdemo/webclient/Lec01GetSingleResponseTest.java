@@ -1,4 +1,4 @@
-package com.github.webfluxdemo;
+package com.github.webfluxdemo.webclient;
 
 import com.github.webfluxdemo.dto.ResponseDto;
 import org.junit.jupiter.api.Test;
